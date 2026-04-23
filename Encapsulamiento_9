@@ -1,0 +1,40 @@
+class Juego:
+    def __init__(self, nombre, genero, precio):
+        self._nombre = nombre
+        self._genero = genero
+        self._precio = precio
+    
+    def mostrar_informacion(self):
+        return f"\nJuego: {self._nombre} \nGenero: {self._genero} \nPrecio: {self._precio}\n"
+    
+    def oferta(self, limite):
+        return self._precio < limite
+    
+    def get_nombre(self):
+        return self._nombre
+    
+    def set_nombre(self, nombre):
+        self._nombre = nombre
+
+    def get_genero(self):
+        return self._genero
+    
+    def set_genero(self, genero):
+        self._genero = genero
+    
+    def get_precio(self):
+        return self._precio
+    
+    def set_precio(self, precio):
+        self._precio = precio
+
+if __name__ == "__main__":
+    juego1 = Juego("Deltarune", "Acción", 2000)
+    juego2 = Juego("Minecraft", "Aventura", 5000)
+    print(juego1.mostrar_informacion())
+    print(juego2.mostrar_informacion())
+
+    print("¿Deltarune esta en oferta?")
+    print(juego1.oferta(3000))
+    print("¿Minecraft esta en oferta?")
+    print(juego2.oferta(2000))
