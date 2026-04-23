@@ -1,0 +1,61 @@
+class Producto:
+    def __init__(self, nombre, precio, stock):
+        self._nombre = nombre
+        self._precio = precio
+        self._stock = stock
+    
+    def mostrar_informacion(self):
+        return f"\nProducto: {self._nombre} \nPrecio: {self._precio} \nStock: {self._stock}\n"
+    
+    def aumentar_stock(self, cantidad):
+        if cantidad > 0:
+            self._stock += cantidad
+        else:
+            print("ERROR: Cantidad fuera de rango")
+    
+    def disminuir_stock(self, cantidad):
+        if 0 < cantidad <= self._stock:
+            self._stock -= cantidad
+        else:
+            print("ERROR: Stock insuficiente")
+    
+    def get_nombre(self):
+        return self._nombre
+    
+    def set_nombre(self, nombre):
+        self._nombre = nombre
+    
+    def get_precio(self):
+        return self._precio
+    
+    def set_precio(self, precio):
+        self._precio = precio
+    
+    def get_stock(self):
+        return self._stock
+    
+    def set_stock(self, stock):
+        self._stock = stock
+    
+if __name__ == "__main__":
+    producto1 = Producto("Teclado", 10000, 50)
+    print(producto1.mostrar_informacion())
+
+    producto1.aumentar_stock(20)
+    print(producto1.mostrar_informacion())
+
+    producto1.disminuir_stock(50)
+    print(producto1.mostrar_informacion())
+
+    producto1.disminuir_stock(100)
+
+    producto2 = Producto("Mouse", 8000, 30)
+    print(producto2.mostrar_informacion())
+
+    producto2.aumentar_stock(10)
+    print(producto2.mostrar_informacion())
+
+    producto2.disminuir_stock(30)
+    print(producto2.mostrar_informacion())
+
+    producto2.disminuir_stock(80)
