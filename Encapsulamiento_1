@@ -1,0 +1,86 @@
+
+assignment
+ENCAPSULAMIENTO: EJERCITACIÓN
+Dylan Diaz
+•
+16 abr
+100 puntos
+Fecha de entrega: 12:00
+Estimados, les adjunto los ejercicios a realizar y el primer ejercicio resuelto. Estoy a disposición de consultas. Saludos cordiales.
+EJERCICIOS ENCAPSULAMIENTO
+Documentos de Google
+
+Comentarios de la clase
+Tu trabajo
+Entregado
+Encapsulamiento_9.py
+Texto
+
+Encapsulamiento_10.py
+Texto
+
+Encapsulamiento_1.py
+Texto
+
+Encapsulamiento_2.py
+Texto
+
+Encapsulamiento_3.py
+Texto
+
+Encapsulamiento_4.py
+Texto
+
+Encapsulamiento_5.py
+Texto
+
+Encapsulamiento_6.py
+Texto
+
+Encapsulamiento_7.py
+Texto
+
+Encapsulamiento_8.py
+Texto
+
+Comentarios privados
+class Auto:
+    def __init__(self, marca, modelo, año):
+        self._marca = marca
+        self._modelo = modelo
+        self._año = año
+
+    def mostrar_informacion(self):
+        return f"auto: {self._marca} \nMarca: {self._modelo} \nAño: {self._año}"
+
+    def get_marca(self):
+        return self._marca
+
+    def set_marca(self, marca):
+        self._marca = marca
+
+    def get_modelo(self):
+        return self._modelo
+
+    def set_modelo(self, modelo):
+        self._modelo = modelo
+
+    def get_año(self):
+        return self._año
+
+    def set_año(self, año):
+        if año > 1885:
+            self._año = año
+        else:
+            print("Año no válido. El año debe ser mayor que 1885.")
+
+if __name__ == "__main__":
+    auto1 = Auto("Honda", "Corolla", 2009)
+    print(auto1.mostrar_informacion())
+    
+    auto1.set_marca("Toyota")
+    auto1.set_año(2008)
+    print("Después de cambiar la marca y el año:")
+    print(auto1.mostrar_informacion())
+    
+    auto1.set_año(1800)
