@@ -1,0 +1,41 @@
+import math
+class Circulo:
+    def __init__(self, radio):
+        if radio > 0:
+            self._radio = radio
+        else:
+            self._radio = 1
+    
+    def mostrar_informacion(self):
+        return f"\nRadio: {self._radio}\n"
+    
+    def area(self):
+        return math.pi * self._radio ** 2
+    
+    def circunferencia(self):
+        return 2 * math.pi * self._radio
+    
+    def get_radio(self):
+        return self._radio
+    
+    def set_radio(self, radio):
+        self._radio = radio
+
+if __name__ == "__main__":
+    circulo1 = Circulo(20)
+    print(circulo1.mostrar_informacion())
+
+    print("Área:", circulo1.area())
+    print("Circunferencia:", circulo1.circunferencia())
+
+    circulo1.set_radio(10)
+    print(circulo1.mostrar_informacion())
+
+    print("Área:", circulo1.area())
+    print("Circunferencia:", circulo1.circunferencia())
+
+    circulo2 = Circulo(5)
+    print(circulo2.mostrar_informacion())
+
+    print("Área:", circulo2.area())
+    print("Circunferencia:", circulo2.circunferencia())
