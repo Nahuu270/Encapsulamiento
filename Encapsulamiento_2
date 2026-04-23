@@ -1,0 +1,47 @@
+class Persona:
+    def __init__(self, nombre, edad, sexo):
+        self._nombre = nombre
+        self._edad = edad
+        self._sexo = sexo
+    
+    def mostrar_informacion(self):
+        return f"Persona: {self._nombre} \nEdad: {self._edad} \nSexo: {self._sexo}"
+    
+    def get_nombre(self):
+        return self._nombre
+    
+    def set_nombre(self, nombre):
+        self._nombre = nombre
+    
+    def get_edad(self):
+        return self._edad
+    
+    def set_edad(self, edad):
+        if edad > 0:
+            self._edad = edad
+        else:
+            print("error: Edad fuera de rango")
+    
+    def get_sexo(self):
+        return self._sexo
+    
+    def set_sexo(self, sexo):
+        if sexo == "Masculino":
+            self._sexo = sexo
+        elif sexo == "Femenino":
+            self._sexo = sexo
+        else:
+            print("Error: Ingrese \"Femenino\" o \"Masculino\"")
+
+if __name__ == "__main__":
+    persona1 = Persona("Jorge", 16, "Masculino")
+    print(persona1.mostrar_informacion())
+
+    persona1.set_nombre("Maria")
+    persona1.set_edad(20)
+    persona1.set_sexo("Femenino")
+    print("Despues de editar la información:")
+    print(persona1.mostrar_informacion())
+
+    persona1.set_sexo("maculino")
+    persona1.set_edad(-3)
