@@ -1,0 +1,39 @@
+class Rectangulo:
+    def __init__(self, base, altura):
+        self._base = base
+        self._altura = altura
+    
+    def mostrar_informacion(self):
+        return f"\nBase: {self._base} \nAltura: {self._altura}"
+    
+    def area(self):
+        return self._base * self._altura
+    
+    def perimetro(self):
+        return 2 * (self._base + self._altura)
+    
+    def get_base(self):
+        return self._base
+    
+    def set_base(self, base):
+        self._base = base
+    
+    def get_altura(self):
+        return self._altura
+    
+    def set_altura(self, altura):
+        self._altura = altura
+
+if __name__ == "__main__":
+    rectangulo1 = Rectangulo(8, 5)
+
+    print(rectangulo1.mostrar_informacion())
+    print("Área:", rectangulo1.area())
+    print("Perímetro:", rectangulo1.perimetro())
+
+    rectangulo1.set_base(10)
+    rectangulo1.set_altura(7)
+    
+    print(rectangulo1.mostrar_informacion())
+    print("Área:", rectangulo1.area())
+    print("Perímetro:", rectangulo1.perimetro())
