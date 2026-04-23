@@ -1,0 +1,55 @@
+class CuentaBancaria:
+    def __init__(self, titular, saldo, numero_cuenta):
+        self._titular = titular
+        self._saldo = saldo
+        self._numero_cuenta = numero_cuenta
+    
+    def mostrar_informacion(self):
+        return f"Titular: {self._titular} \nSaldo: {self._saldo} \nNumero De Cuenta: {self._numero_cuenta}\n"
+    
+    def depositar(self, monto):
+        if monto > 0:
+            self._saldo += monto
+    
+    def retirar(self, monto):
+        if monto <= self._saldo:
+            self._saldo -= monto
+        else:
+            print("Saldo Insuficiente")
+
+    def get_titular(self):
+        return self._titular
+    
+    def set_titular(self, titular):
+        self._titular = titular
+    
+    def get_saldo(self):
+        return self._saldo
+    
+    def set_saldo(self, saldo):
+        self._saldo = saldo
+    
+    def get_numero_cuenta(self):
+        return self._numero_cuenta
+    
+    def set_numero_cuenta(self, numero_cuenta):
+        self._numero_cuenta = numero_cuenta
+
+if __name__ == "__main__":
+    cuenta1 = CuentaBancaria("Manuel", 450000, 2)
+    print(cuenta1.mostrar_informacion())
+
+    cuenta1.set_titular("Sofia")
+    cuenta1.set_saldo(800000)
+    cuenta1.set_numero_cuenta(5)
+    print(cuenta1.mostrar_informacion())
+
+    cuenta1.depositar(200000)
+    print("Despues de depositar. . .")
+    print(cuenta1.mostrar_informacion())
+
+    cuenta1.retirar(500000)
+    print("Despues de retirar. . .")
+    print(cuenta1.mostrar_informacion())
+
+    cuenta1.retirar(1000000) #error
